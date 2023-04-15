@@ -4,10 +4,18 @@ from app import app
 
 class TestTextAnalysisServices(unittest.TestCase):
 
-    def test_analyze_text_valid(self):
+    def test_analyze_text_valid_word_count(self):
         with app.test_client() as client:
             # Test with valid input
             payload = {"service": "word-count", "text": "This is a test."}
+            response = client.post('/analyze-text', data=json.dumps(payload), content_type='application/json')
+            self.assertEqual(response.status_code, 200)
+            self.assertIn('result', json.loads(response.data))
+
+    def test_analyze_text_valid_bigram(self):
+        with app.test_client() as client:
+            # Test with valid input
+            payload = {"service": "bigram", "text": "This is a test."}
             response = client.post('/analyze-text', data=json.dumps(payload), content_type='application/json')
             self.assertEqual(response.status_code, 200)
             self.assertIn('result', json.loads(response.data))
