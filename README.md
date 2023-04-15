@@ -65,3 +65,9 @@ HTTP 200 OK
     "and": 1    
   }    
 }
+
+### To run the app
+ $`python3 app.py`
+
+### To run tests
+ $`python3 -m unittest discover tests`
