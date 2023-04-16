@@ -1,7 +1,7 @@
 import re
 import contractions
 
-def preprocess_text(text:str)->list[str]:
+def preprocess_text(text:str)->List[str]:
     """
     Performs text preprocessing
 
