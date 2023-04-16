@@ -1,6 +1,6 @@
 from collections import Counter
 from shared_resources.preprocess_text import preprocess_text
-
+from typing import List
 
 def get_bigram_analysis_result(text:str)->List[List[str]]:
     """

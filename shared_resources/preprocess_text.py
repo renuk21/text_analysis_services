@@ -1,5 +1,6 @@
 import re
 import contractions
+from typing import List
 
 def preprocess_text(text:str)->List[str]:
     """

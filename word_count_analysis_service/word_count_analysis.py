@@ -1,5 +1,6 @@
 from collections import Counter
 from shared_resources.preprocess_text import preprocess_text
+from typing import Dict
 
 def get_word_count_analysis_result(text:str)->Dict[str,int]:
     """
