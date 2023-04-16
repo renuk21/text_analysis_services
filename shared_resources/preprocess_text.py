@@ -1,7 +1,16 @@
 import re
 import contractions
 
-def preprocess_text(text):
+def preprocess_text(text:str)->list[str]:
+    """
+    Performs text preprocessing
+
+    Args:
+        text (str): The input text.
+
+    Returns:
+        A list of tokens (words)
+    """
     # Remove contractions
     text = contractions.fix(text)   
 

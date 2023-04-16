@@ -43,6 +43,14 @@ class TestTextAnalysisServices(unittest.TestCase):
             response = client.post('/analyze-text', data=json.dumps(payload), content_type='application/json')
             self.assertEqual(response.status_code, 400)
             self.assertIn('error', json.loads(response.data))
+    
+    def test_analyze_text_invalid_text(self):
+        with app.test_client() as client:
+            # Test with invalid text
+            payload = {"service": "bigram", "text": 8127489302}
+            response = client.post('/analyze-text', data=json.dumps(payload), content_type='application/json')
+            self.assertEqual(response.status_code, 400)
+            self.assertIn('error', json.loads(response.data))
 
 if __name__ == '__main__':
     unittest.main()

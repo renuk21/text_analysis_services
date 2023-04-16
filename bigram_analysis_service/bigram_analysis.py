@@ -2,7 +2,7 @@ from collections import Counter
 from shared_resources.preprocess_text import preprocess_text
 
 
-def get_bigram_analysis_result(text):
+def get_bigram_analysis_result(text:str)->list[list[str]]:
     """
     Identifies the most frequently occurring pairs of words (bigrams) in the text.
 

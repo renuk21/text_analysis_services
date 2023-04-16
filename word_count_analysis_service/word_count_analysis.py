@@ -1,7 +1,7 @@
 from collections import Counter
 from shared_resources.preprocess_text import preprocess_text
 
-def get_word_count_analysis_result(text):
+def get_word_count_analysis_result(text:str)->dict[str,int]:
     """
     Counts the occurrences of each word in the text.
 
