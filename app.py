@@ -3,7 +3,7 @@ from app_config import SERVICES
 import logging
 
 app = Flask(__name__)
-app.config['app.json.sort_keys'] = False
+app.config['JSON_SORT_KEYS'] = False
 
 @app.route('/analyze-text', methods=['POST'])
 def analyze_text():
